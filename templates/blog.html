@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+    {{ section.title }}
+</h1>
+
+<ul>
+    <!-- If pagination is used, sections.pages will be empty. The use of the pagination object is required instead -->
+    {% for page in section.pages %}
+    <li><a href="{{ page.permalink | safe }}">{{ page.title }} </a></li>
+    {% endfor %}
+</ul>
+{% endblock content %}
